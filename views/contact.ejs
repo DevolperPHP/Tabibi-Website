@@ -1,0 +1,221 @@
+
+
+<!-- Page Header -->
+<section class="section" style="padding: 3rem 0; background: var(--background-light);">
+    <div class="container">
+        <div class="text-center">
+            <h1>اتصل بنا</h1>
+            <p style="font-size: 1.25rem; color: var(--text-medium);">نحن هنا لمساعدتك، تواصل معنا في أي وقت</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form and Info -->
+<section class="section">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+            <!-- Contact Form -->
+            <div>
+                <h2 style="margin-bottom: 2rem;">أرسل لنا رسالة</h2>
+                
+                <!-- Alert Messages -->
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <div class="alert alert-error">
+                        <%= error %>
+                    </div>
+                <% } %>
+                
+                <% if (typeof success !== 'undefined' && success) { %>
+                    <div class="alert alert-success">
+                        <%= success %>
+                    </div>
+                <% } %>
+                
+                <form action="/contact" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">الاسم الكامل *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">البريد الإلكتروني *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">موضوع الرسالة</label>
+                        <select id="subject" name="subject" class="form-select">
+                            <option value="">اختر الموضوع</option>
+                            <option value="general-inquiry">استفسار عام</option>
+                            <option value="app-support">دعم التطبيق</option>
+                            <option value="patient-inquiry">استفسار مريض</option>
+                            <option value="student-application">طلب انضمام كطالب</option>
+                            <option value="collaboration">تعاون وشراكة</option>
+                            <option value="complaint">شكوى</option>
+                            <option value="suggestion">اقتراح</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">الرسالة *</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="اكتب رسالتك هنا..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-button">إرسال الرسالة</button>
+                </form>
+            </div>
+            
+            <!-- Contact Information -->
+            <div>
+                <h2 style="margin-bottom: 2rem;">معلومات التواصل</h2>
+                
+                <div class="card">
+                    <h3>تواصل معنا للدعم</h3>
+                    <div style="margin-top: 1.5rem;">
+                        <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <div class="card-icon" style="margin: 0;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>العنوان</h4>
+                                <p>شارع حيفا، بغداد، العراق</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <div class="card-icon" style="margin: 0;">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>الهاتف</h4>
+                                <p>+964 770 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <div class="card-icon" style="margin: 0;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>البريد الإلكتروني</h4>
+                                <p>info@tabibi.com</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <div class="card-icon" style="margin: 0;">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>ساعات الدعم</h4>
+                                <p>الأحد - الخميس: 9:00 ص - 5:00 م</p>
+                                <p>الجمعة: 9:00 ص - 12:00 ظ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Emergency Contact -->
+                <div class="card" style="margin-top: 2rem; background: linear-gradient(135deg, var(--error) 0%, #FF6B6B 100%); color: white;">
+                    <h3 style="color: white;">طوارئ</h3>
+                    <p>للحالات الطارئة خارج ساعات العمل:</p>
+                    <p style="font-weight: 600; font-size: 1.25rem;">+964 770 999 8888</p>
+                    <p style="font-size: 0.9rem;">متاح 24/7 للحالات العاجلة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="section" style="background: var(--background-light); padding: 0;">
+    <div style="height: 400px; background: #E5E5EA; display: flex; align-items: center; justify-content: center; color: var(--text-medium);">
+        <div class="text-center">
+            <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-blue);"></i>
+            <h3>موقعنا على الخريطة</h3>
+            <p>شارع حيفا، بغداد، العراق</p>
+            <p style="font-size: 0.9rem;">(يمكن إضافة خرائط جوجل هنا)</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>الأسئلة الشائعة</h2>
+            <p>إجابات على أكثر الأسئلة تكراراً</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>هل الخدمات مجانية بالكامل؟</h3>
+                <p>نعم، جميع خدماتنا مجانية تماماً للمرضى. نحن منصة تعليمية غير ربحية تهدف لخدمة المجتمع</p>
+            </div>
+            <div class="card">
+                <h3>هل الطلاب مؤهلون للعلاج؟</h3>
+                <p>نعم، جميع الطلاب يعملون تحت إشراف مباشر من أساتذة متخصصين ذوي خبرة واسعة</p>
+            </div>
+            <div class="card">
+                <h3>كيف أحجز موعداً؟</h3>
+                <p>يمكنك الحجز من خلال ملء النموذج أعلاه أو الاتصال بنا مباشرة. سنؤكد الموعد خلال 24 ساعة</p>
+            </div>
+            <div class="card">
+                <h3>ما هي أنواع العلاجات المتاحة؟</h3>
+                <p>نقدم جميع أنواع علاجات الأسنان بما في ذلك الفحص، الحشوات، علاج الجذور، والتنظيف</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Form validation and enhancement
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    const submitBtn = form.querySelector('.form-button');
+    
+    form.addEventListener('submit', function(e) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'جاري الإرسال...';
+        
+        // Reset after 3 seconds if no server response
+        setTimeout(function() {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'إرسال الرسالة';
+        }, 3000);
+    });
+    
+    // Real-time validation
+    const inputs = form.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+    });
+    
+    function validateField(field) {
+        const value = field.value.trim();
+        
+        if (field.hasAttribute('required') && !value) {
+            field.style.borderColor = 'var(--error)';
+            return false;
+        } else if (field.type === 'email' && value && !isValidEmail(value)) {
+            field.style.borderColor = 'var(--error)';
+            return false;
+        } else {
+            field.style.borderColor = 'var(--border-light)';
+            return true;
+        }
+    }
+    
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+});
+</script>
