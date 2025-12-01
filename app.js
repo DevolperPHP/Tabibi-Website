@@ -64,5 +64,5 @@ app.post('/contact', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`الخادم يعمل على المنفذ ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
